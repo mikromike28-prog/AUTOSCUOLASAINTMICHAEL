@@ -1,0 +1,5 @@
+# Fuori dal sito pubblico: note interne, anteprime, copie di sicurezza
+LEGGIMI.md
+_anteprima/
+*.prima-*
+*.tmp

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gestione della bacheca: Gruppo Saint Michael</title>
+<meta name="description" content="Pagina riservata alle autoscuole per scrivere avvisi e corsi.">
+<meta name="theme-color" content="#0B2244">
+<link rel="canonical" href="https://autoscuolasaintmichael.it/gestione.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gestione della bacheca: Gruppo Saint Michael">
+<meta property="og:description" content="Pagina riservata alle autoscuole per scrivere avvisi e corsi.">
+<meta property="og:url" content="https://autoscuolasaintmichael.it/gestione.html">
+<meta property="og:image" content="https://autoscuolasaintmichael.it/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stemma-saint-michael.png">
+<link rel="preload" href="fonts/lexend-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stile.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<header class="testata">
+  <div class="largo">
+    <a class="salta" href="#contenuto">Vai al contenuto</a>
+    <a class="marca" href="index.html" translate="no"><img src="img/stemma-saint-michael.png" width="358" height="440" alt=""><span>Gruppo Saint Michael<small>Autoscuole Saint Michael e Santamaria</small></span></a>
+    <nav class="menu" aria-label="Sezioni">
+      <a href="index.html#patenti">Patenti</a>
+      <a href="index.html#rinnovo">Rinnovo</a>
+      <a href="index.html#bacheca">Bacheca</a>
+      <a href="index.html#sedi">Sedi</a>
+      <a class="tasto" href="index.html#preventivo">Chiedi un preventivo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+  <section class="pagina gestione">
+    <div class="largo">
+      <a class="indietro" href="index.html#bacheca">‹ Torna al sito</a>
+      <h1>Gestione della bacheca</h1>
+      <p class="intro">Scrivi qui avvisi e corsi. Poi premi «Pubblica sul sito», in fondo.</p>
+      <p class="stato" id="stato" role="status" aria-live="polite"></p>
+
+      <h2>Avvisi</h2>
+      <ul class="elenco" id="g-avvisi"></ul>
+      <p class="senza" id="g-avvisi-vuoto" hidden>Nessun avviso.</p>
+      <details class="domanda modulo">
+        <summary>Nuovo avviso</summary>
+        <form id="form-avviso" autocomplete="off">
+          <label class="campo">Titolo<input id="a-titolo" name="titolo" type="text" maxlength="90" required placeholder="Sede chiusa lunedì 8 dicembre…"></label>
+          <label class="campo">Testo<textarea id="a-testo" name="testo" rows="3" maxlength="300" required placeholder="Riapriamo martedì, con i soliti orari…"></textarea></label>
+          <label class="campo">Sede<select id="a-sede" name="sede"><option value="">Tutte e due le sedi</option><option>Gioia del Colle</option><option>Casamassima</option></select></label>
+          <label class="campo">Visibile fino al (facoltativo)<input id="a-fino" name="fino" type="date"></label>
+          <div class="tasti"><button class="tasto" type="submit">Aggiungi l’avviso</button><button class="tasto vuoto annulla" type="button" hidden>Annulla</button></div>
+        </form>
+      </details>
+
+      <h2>Corsi in partenza</h2>
+      <ul class="elenco" id="g-corsi"></ul>
+      <p class="senza" id="g-corsi-vuoto" hidden>Nessun corso.</p>
+      <details class="domanda modulo">
+        <summary>Nuovo corso</summary>
+        <form id="form-corso" autocomplete="off">
+          <label class="campo">Corso<input id="c-corso" name="corso" type="text" maxlength="70" required placeholder="Teoria patente B…"></label>
+          <label class="campo">Sede<select id="c-sede" name="sede" required><option>Gioia del Colle</option><option>Casamassima</option></select></label>
+          <label class="campo">Giorno di inizio<input id="c-inizio" name="inizio" type="date" required></label>
+          <label class="campo">Giorni e orario<input id="c-orario" name="orario" type="text" maxlength="90" required placeholder="dal lunedì al venerdì, 18:00-19:00…"></label>
+          <div class="tasti"><button class="tasto" type="submit">Aggiungi il corso</button><button class="tasto vuoto annulla" type="button" hidden>Annulla</button></div>
+        </form>
+      </details>
+
+      <h2>Anteprima</h2>
+      <p class="intro">Così si vede sul sito. Avvisi e corsi scaduti qui non compaiono.</p>
+      <div class="bacheca">
+        <div>
+          <h3>Avvisi</h3>
+          <ul class="elenco" id="lista-avvisi" data-h="h4" data-quanti="0">
+            <li class="avviso"><p class="quando"><time datetime="2026-11-20">20 novembre 2026</time></p><h4>Rinnovo della patente: prenota con noi la visita medica</h4><p>Scrivici su WhatsApp o passa in sede. Ti diciamo il giorno e che cosa portare. <a href="index.html#rinnovo">Vedi il rinnovo</a></p></li>
+            <li class="avviso"><p class="quando"><time datetime="2026-11-20">20 novembre 2026</time></p><h4>In arrivo Quiz GOAT</h4><p>L&#x27;app con teoria e quiz per tutte le patenti e le abilitazioni. <a href="quiz-goat.html">Apri la pagina</a></p></li>
+          </ul>
+          <p class="senza" id="senza-avvisi" hidden>In questo momento non ci sono avvisi.</p>
+        </div>
+        <div>
+          <h3>Corsi in partenza</h3>
+          <ul class="elenco" id="lista-corsi" data-h="h4" data-quanti="0" hidden>
+          </ul>
+          <div id="senza-corsi"><p class="senza">Stiamo preparando il calendario dei prossimi corsi. Per le date scrivici su WhatsApp o passa in sede.</p></div>
+        </div>
+      </div>
+
+      <h2>Collegamento</h2>
+      <p id="coll-prova" hidden>La pubblicazione si attiva quando il sito è su GitHub. Per ora puoi provare: qui non si pubblica niente.</p>
+      <form id="form-chiave" autocomplete="off">
+        <div id="coll-chiave" hidden>
+          <label class="campo">Chiave di GitHub<input id="campo-chiave" name="chiave" type="password" autocomplete="off" spellcheck="false" placeholder="Incolla qui la chiave…"></label>
+          <p class="nota">La chiave resta solo in questo dispositivo. Incollala una volta sul telefono e una volta sul PC.</p>
+          <div class="tasti"><button class="tasto" type="submit">Collega questo dispositivo</button></div>
+        </div>
+      </form>
+      <div id="coll-fatto" hidden>
+        <p>Questo dispositivo è collegato.</p>
+        <div class="tasti"><button class="tasto vuoto" type="button" id="scollega">Scollega questo dispositivo</button></div>
+      </div>
+    </div>
+  </section>
+  <div class="barra-pubblica">
+    <div class="largo">
+      <span id="da-pubblicare">Nessuna modifica da pubblicare.</span>
+      <button class="tasto" type="button" id="pubblica" disabled>Pubblica sul sito</button>
+    </div>
+  </div>
+</main>
+<script>window.GESTIONE={"utente": "mikromike28-prog", "deposito": "autoscuolasaintmichael", "ramo": "main", "file": "bacheca.json"};</script>
+<script>window.BACHECA_INIZIALE={"avvisi": [{"data": "2026-11-20", "titolo": "Rinnovo della patente: prenota con noi la visita medica", "testo": "Scrivici su WhatsApp o passa in sede. Ti diciamo il giorno e che cosa portare.", "sede": "", "link": "index.html#rinnovo", "testo_link": "Vedi il rinnovo"}, {"data": "2026-11-20", "titolo": "In arrivo Quiz GOAT", "testo": "L'app con teoria e quiz per tutte le patenti e le abilitazioni.", "sede": "", "link": "quiz-goat.html", "testo_link": "Apri la pagina"}], "corsi": []};window.BACHECA_FERMA=true;</script>
+<script src="bacheca.js"></script>
+<script src="gestione.js"></script>
+
+<footer class="piede">
+  <div class="largo">
+    <img src="img/stemma-saint-michael.png" width="358" height="440" loading="lazy" alt="">
+    <div>
+      <p><strong translate="no">MIKE S.R.L.S.</strong> · Via Conche 4, 70010 Casamassima (BA) · Partita IVA <span class="nb">IT07860820724</span></p>
+      <p><a href="bacheca.html">Bacheca</a> · <a href="index.html#guide">Guide</a> · <a href="domande.html">Domande frequenti</a> · <a href="privacy.html">Privacy</a></p>
+      <p>Email <a href="mailto:autoscuolasaintmichael25@outlook.it">autoscuolasaintmichael25@outlook.it</a></p>
+      <p>© 2026 Mike s.r.l.s. Tutti i diritti riservati. Testi e tavole non si copiano senza permesso.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
