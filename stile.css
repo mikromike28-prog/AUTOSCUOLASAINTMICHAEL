@@ -102,6 +102,17 @@ h3{font-size:20px;margin:0 0 6px;font-weight:650}
 .servizi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .serv{display:flex;flex-direction:column;gap:4px;background:transparent;border:1.5px solid var(--contorno);border-radius:var(--r);padding:16px;color:var(--testo);text-decoration:none;transition:border-color .15s,transform .15s}
 
+/* patenti e abilitazioni professionali: immagine decorativa di Michael di lato, intera, mai ritagliata (21/11/2026) */
+.con-lato{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:44px;align-items:center}
+.con-lato.destra{grid-template-columns:minmax(0,1fr) minmax(0,300px)}
+.con-lato.destra .lato{order:2}
+.lato{display:block;width:100%;height:auto;border-radius:var(--r);border:1.5px solid var(--contorno)}
+.testo-lato{min-width:0}
+.patenti.tre{grid-template-columns:repeat(3,minmax(0,1fr))}
+.servizi.due{grid-template-columns:repeat(2,minmax(0,1fr))}
+.patenti.pro .fig{aspect-ratio:3/2}
+.pat.tav .fig{padding:0;background:#fff}
+
 /* tavole */
 .tavola{display:block;margin-top:20px;border-radius:12px;overflow:hidden;border:1.5px solid var(--contorno);background:#fff}
 .tavola img{width:100%;transition:transform .25s}
@@ -258,7 +269,15 @@ button.tasto{font:inherit;font-weight:700;cursor:pointer}
 }
 @media (max-width:900px){
   /* carte in riga: disegno a sinistra, testo a destra, una sotto l'altra */
-  .patenti,.servizi{grid-template-columns:1fr;gap:12px}
+  .patenti,.servizi,.patenti.tre,.servizi.due{grid-template-columns:1fr;gap:12px}
+  /* immagine di lato: va fra il titolo e le carte, intera e più piccola */
+  .con-lato,.con-lato.destra{display:flex;flex-direction:column;align-items:stretch}
+  .testo-lato{display:contents}
+  .con-lato .capo{order:1}
+  .con-lato .lato,.con-lato.destra .lato{order:2;align-self:center;width:min(240px,70%);margin:0 0 24px}
+  .con-lato .corpo{order:3}
+  .con-lato .intro{margin-bottom:22px}
+  .pat.tav .fig{padding:0}
   .pat{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:16px;align-items:center;padding:12px}
   .pat .fig{grid-row:1 / span 2;margin:0;padding:6px}
   .pat b{align-self:end}
